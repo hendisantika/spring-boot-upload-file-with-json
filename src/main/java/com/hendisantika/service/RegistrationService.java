@@ -4,6 +4,9 @@ import com.hendisantika.dto.UserDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 /**
  * Created by IntelliJ IDEA.
  * Project : spring-boot-upload-file-with-json
@@ -26,5 +29,12 @@ public class RegistrationService {
                 (userDTO.getAddressProof().getFile(),
                         getFilePath("F:\\TEST",
                                 userDTO.getAddressProof().getDocumentType(), 2L));
+    }
+
+    private Path getFilePath(String basePath, String documentType, Long userId) {
+        Path path = Paths.get(basePath);
+        return path
+                .resolve(String.valueOf(userId))
+                .resolve(documentType);
     }
 }
