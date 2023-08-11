@@ -1,6 +1,7 @@
 package com.hendisantika.controller;
 
 import com.hendisantika.dto.UserDTO;
+import com.hendisantika.service.RegistrationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,7 +29,6 @@ public class UserController {
 
     @PostMapping("register")
     public ResponseEntity<String> registerUser(@ModelAttribute UserDTO userDTO) {
-
         registrationService.registerUser(userDTO);
         return new ResponseEntity<>
                 ("User registered successfully.",

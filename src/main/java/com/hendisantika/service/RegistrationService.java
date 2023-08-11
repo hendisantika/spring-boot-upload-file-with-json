@@ -27,7 +27,7 @@ public class RegistrationService {
         // 2L should be replaced by dynamic user id which will be generated after storing user details
         fileService.saveFile
                 (userDTO.getAddressProof().getFile(),
-                        getFilePath("F:\\TEST",
+                        getFilePath("/Users/hendisantika/Desktop/tes",
                                 userDTO.getAddressProof().getDocumentType(), 2L));
     }
 
