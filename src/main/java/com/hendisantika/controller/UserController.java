@@ -1,6 +1,11 @@
 package com.hendisantika.controller;
 
+import com.hendisantika.dto.UserDTO;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,4 +25,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 
     private final RegistrationService registrationService;
+
+    @PostMapping("register")
+    public ResponseEntity<String> registerUser(@ModelAttribute UserDTO userDTO) {
+
+        registrationService.registerUser(userDTO);
+        return new ResponseEntity<>
+                ("User registered successfully.",
+                        HttpStatus.CREATED);
+    }
 }
