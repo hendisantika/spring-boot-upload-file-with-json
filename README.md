@@ -16,4 +16,9 @@ curl --location 'localhost:8080/user/register' \
 --form 'addressProof.documentType="LOGO"'
 ```
 
+### POSTMAN
+
+Add New User Registration
+
+![Add New User Registration](img/api.png "Add New User Registration")
 
