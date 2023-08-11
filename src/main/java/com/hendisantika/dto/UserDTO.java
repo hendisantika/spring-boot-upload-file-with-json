@@ -1,10 +1,6 @@
-package com.hendisantika;
+package com.hendisantika.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import org.springframework.web.multipart.MultipartFile;
+import lombok.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -13,16 +9,21 @@ import org.springframework.web.multipart.MultipartFile;
  * Email: hendisantika@gmail.com
  * Telegram : @hendisantika34
  * Date: 8/11/23
- * Time: 09:33
+ * Time: 09:34
  * To change this template use File | Settings | File Templates.
  */
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class AddressProofDTO {
+@ToString
+public class UserDTO {
 
-    private MultipartFile file;
+    private String name;
 
-    private String documentType;
+    private String address;
+
+    private String mobileNo;
+
+    private AddressProofDTO addressProof;
 }
